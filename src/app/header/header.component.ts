@@ -36,7 +36,9 @@ export class HeaderComponent implements OnInit {
 		});
 
 		this.appService.pasteContent.subscribe((res: any) => {
-			this.contentsArr.push(res);
+			if(res) {
+				this.contentsArr.push(res);
+			}
 			this.selectedText = '';
 		})
 
