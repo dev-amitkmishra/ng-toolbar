@@ -1,21 +1,30 @@
-<div>
-  <div *ngFor="let item of tabItems">
-    <ul class="display-icons" *ngFor="let iconitem of item.icons; index as i">
-      <li><a (click)="!!executeCommand(iconitem)" [title]="iconitem.tooltip" [ngClass]="{'active': iconitem.active}"><i
-            class="fa fa-{{iconitem.icon}}"></i></a></li>
-    </ul>
+<div class="content">
+  <div>
+    <div *ngFor="let item of tabItems">
+      <ul class="display-icons" *ngFor="let iconitem of item.icons; index as i">
+        <li><a (click)="!!executeCommand(iconitem)" [title]="iconitem.tooltip"
+            [ngClass]="{'active': iconitem.active}"><i class="fa fa-{{iconitem.icon}}"></i></a></li>
+      </ul>
+    </div>
   </div>
-</div>
 
-<input type="file" id="fileopen" accept="image/*" hidden />
-<div *ngIf="imageShow">
+  <input type="file" id="fileopen" accept="image/*" hidden />
+  <div *ngIf="imageShow">
     <img [src]="imageShow" height="400">
     <span (click)="removeFile()"><i class="fa fa-trash"></i></span>
+  </div>
+  <hr />
+  <span class="copy-text-label noselect">Sample Text</span>
+  <p (mouseup)="onTextSelection($event)">{{sampleText}}</p>
+
+
+  <div *ngIf="contentsArr.length > 0">
+    <hr />
+    <span>selected texts from sample text</span>
+    <hr />
+    <span *ngFor="let content of contentsArr">
+      <p>{{content}}</p>
+    </span>
+  </div>
+
 </div>
-
-
-<p (mouseup)="onTextSelection($event)">{{sampleText}}</p>
-
-<span *ngFor="let content of contentsArr">
-  <p>{{content}}</p>
-</span>

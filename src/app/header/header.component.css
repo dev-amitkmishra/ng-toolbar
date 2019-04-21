@@ -1,3 +1,26 @@
+.content {
+    margin: 10px;
+    padding: 10px;
+}
+
+.copy-text-label{
+    background: #eee;
+    border: 1px solid #ccc;
+    padding: 4px;
+    display: flex;
+    width: 90px;
+    font-weight: 600;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
 .display-icons {
   display: inline-block;
   list-style-type: none;
